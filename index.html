@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Technical Documentation</title>
+	<link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+<nav id="navbar">
+  <header>Python Documentation</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li>
+      <a class="nav-link" href="#What_you_should_already_know"
+        >Python Language advantages and applications</a
+      >
+    </li>
+    <li>
+      <a class="nav-link" href="#JavaScript_and_Java">Python 3 basics</a>
+    </li>
+    <li><a class="nav-link" href="#Hello_world">Namespaces and Scope in Python</a></li>
+    <li><a class="nav-link" href="#Variables">Statement, Indentation and Comment in Python</a></li>
+    <li>
+      <a class="nav-link" href="#Declaring_variables">How to assign values to variables in Python and other languages</a>
+    </li>
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>
+        Python is a widely used general-purpose, high level programming language. It was created by Guido van Rossum in 1991 and further developed by the Python Software Foundation. It was designed with an emphasis on code readability, and its syntax allows programmers to express their concepts in fewer lines of code.
+
+Python is a programming language that lets you work quickly and integrate systems more efficiently.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="What_you_should_already_know">
+    <header>Python Language advantages and applications</header>
+    <article>
+      <p><strong>Advantages:</strong></p>
+
+      <ol>
+        <li>
+          Presence of third-party modules 
+        </li>
+        <li>Extensive support libraries(NumPy for numerical calculations, Pandas for data analytics etc) </li>
+        <li>
+          Open source and community development 
+        </li>
+        <li>Versatile, Easy to read, learn and write</li>
+        <li>User-friendly data structures </li><br>
+      </ol>
+      <p><strong>Applications:</strong>
+        <ol><li>
+          GUI based desktop applications
+        </li>
+          <li>Graphic design, image processing applications, Games, and Scientific/ computational Applications</li>
+          <li>Web frameworks and applications </li>
+          <li>Enterprise and Business applications </li>
+          <li>Operating Systems </li>
+        </ol>
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="JavaScript_and_Java">
+    <header>Python 3 basics</header>
+    <article>
+      <p>
+        Python was developed by Guido van Rossum in the early 1990s and its latest version is 3.7.1, we can simply call it as Python3. Python 3.0 was released in 2008. and is interpreted language i.e it’s not compiled and the interpreter will check the code line by line. This article can used to learn very basics of Python programming language.</p>
+
+<p>So before moving on further.. let’s do the most popular ‘HelloWorld’ tradition 😛 and hence compare Python’s Syntax with C, C++, Java ( I have taken these 3 because they are most famous and mostly used languages).
+      </p>
+      <code># Python code for "Hello World"
+# nothing else to type...see how simple is the syntax.
+
+print("Hello World")	
+      </code>
+    </article>
+  </section>
+  <section class="main-section" id="Hello_world">
+    <header>Namespaces and Scope in Python</header>
+    <article>
+      <p><strong>What is namespace:</strong></p>
+      <p>A namespace is a system that has a unique name for each and every object in Python. An object might be a variable or a method. Python itself maintains a namespace in the form of a Python dictionary. Let’s go through an example, a directory-file system structure in computers. Needless to say, that one can have multiple directories having a file with the same name inside every directory. But one can get directed to the file, one wishes, just by specifying the absolute path to the file. </p><p>Real-time example, the role of a namespace is like a surname. One might not find a single “Alice” in the class there might be multiple “Alice” but when you particularly ask for “Alice Lee” or “Alice Clark” (with a surname), there will be only one (time being don’t think of both first name and surname are same for multiple students).
+On similar lines, the Python interpreter understands what exact method or variable one is trying to point to in the code, depending upon the namespace. So, the division of the word itself gives a little more information. Its Name (which means name, a unique identifier) + Space(which talks something related to scope). Here, a name might be of any Python method or variable and space depends upon the location from where is trying to access a variable or a method.</p>
+      <p><strong>Types of namespaces:</strong></p><p>When Python interpreter runs solely without any user-defined modules, methods, classes, etc. Some functions like print(), id() are always present, these are built-in namespaces. When a user creates a module, a global namespace gets created, later the creation of local functions creates the local namespace. The built-in namespace encompasses the global namespace and the global namespace encompasses the local namespace.</p>
+      <p><strong>The lifetime of a namespace:</strong></p><p>A lifetime of a namespace depends upon the scope of objects, if the scope of an object ends, the lifetime of that namespace comes to an end. Hence, it is not possible to access the inner namespace’s objects from an outer namespace.</p>
+      <p><strong>Scope of Objects in Python:</strong></p><p>Scope refers to the coding region from which a particular Python object is accessible. Hence one cannot access any particular object from anywhere from the code, the accessing has to be allowed by the scope of the object.
+Let’s take an example to have a detailed understanding of the same: </p>
+      <p><strong>Example 1: </strong></p><code># Python program showing
+# a scope of object
+
+def some_func():
+	print("Inside some_func")
+	def some_inner_func():
+		var = 10
+		print("Inside inner function, value of var:",var)
+	some_inner_func()
+	print("Try printing var from outer function: ",var)
+some_func()
+      </code>
+      <p><strong>Output:</strong></p><code>Inside some_func
+Inside inner function, value of var: 10
+
+Traceback (most recent call last):
+  File "/home/1eb47bb3eac2fa36d6bfe5d349dfcb84.py", line 8, in 
+    some_func()
+  File "/home/1eb47bb3eac2fa36d6bfe5d349dfcb84.py", line 7, in some_func
+    print("Try printing var from outer function: ",var)
+      NameError: name 'var' is not defined</code>
+    </article>
+  </section>
+  <section class="main-section" id="Variables">
+    <header>Statement, Indentation and Comment in Python</header>
+    <p><strong>Statement</strong></p><p>Instructions written in the source code for execution are called statements. There are different types of statements in the Python programming language like Assignment statements, Conditional statements, Looping statements, etc. These all help the user to get the required output. For example, n = 50 is an assignment statement.
+Multi-Line Statements: Statements in Python can be extended to one or more lines using parentheses (), braces {}, square brackets [], semi-colon (;), continuation character slash (\). When the programmer needs to do long calculations and cannot fit his statements into one line, one can make use of these characters. </p>
+    <p><strong>Indention</strong></p><p>A block is a combination of all these statements. Block can be regarded as the grouping of statements for a specific purpose. Most of the programming languages like C, C++, Java use braces { } to define a block of code. One of the distinctive features of Python is its use of indentation to highlighting the blocks of code. Whitespace is used for indentation in Python. All statements with the same distance to the right belong to the same block of code. If a block has to be more deeply nested, it is simply indented further to the right. </p>
+    <p><strong>Comments</strong></p><p>Python developers often make use of the comment system as, without the use of it, things can get real confusing, real fast. Comments are the useful information that the developers provide to make the reader understand the source code. It explains the logic or a part of it used in the code. Comments are usually helpful to someone maintaining or enhancing your code when you are no longer around to answer questions about it. These are often cited as a useful programming convention that does not take part in the output of the program but improves the readability of the whole program. There are two types of comments in Python: 
+Single line comments: Python single line comment starts with hashtag symbol with no white spaces (#) and lasts till the end of the line. If the comment exceeds one line then put a hashtag on the next line and continue the comment. Python’s single-line comments are proved useful for supplying short explanations for variables, function declarations, and expressions.</p><p><strong>Multi-line string as a comment:</strong> Python multi-line comment is a piece of text enclosed in a delimiter (“””) on each end of the comment. Again there should be no white space between delimiter (“””). They are useful when the comment text does not fit into one line; therefore need to span across lines. Multi-line comments or paragraphs serve as documentation for others reading your code.</p>
+      
+  </section>
+  <section class="main-section" id="Declaring_variables">
+    <header>How to assign values to variables in Python and other languages</header>
+    <article>
+      <strong>Method 1: Direct Initialisation Method</strong>
+      <code># Python 3 code to demonstrate variable assignment
+# upon condition using Direct Initialisation Method
+
+# initialising variable directly
+a = 5
+
+# printing value of a
+print ("The value of a is: " + str(a))
+</code>
+      <p><strong>Output: </strong></p><code>The value of a is: 5</code>
+      <p><strong>Method 2: Using Conditional Operator (?:)</strong></p><code># Python3 code to demonstrate variable assignment
+# upon condition using Conditional Operator
+
+# Initialising variables using Conditional Operator
+a = 1 if 20 > 10 else 0
+
+# Printing value of a
+print("The value of a is: " , str(a))
+
+# This code is contributed by shivanisinghss2110
+      </code>
+      <p><strong>Output:</strong></p><code>The value of a is: 1</code>
+      <p><strong>One liner if-else instead of Conditional Operator (?:) in Python</strong></p><code># Python 3 code to demonstrate variable assignment
+# upon condition using One liner if-else
+
+# initialising variable using Conditional Operator
+# a = 20 > 10 ? 1 : 0 is not possible in Python
+# Instead there is one liner if-else
+a = 1 if 20 > 10 else 0
+
+# printing value of a
+print ("The value of a is: " + str(a))
+</code> <p><strong>Output:</strong></p><code>The value of a is: 1</code>
+    </article>
+  </section>
+  <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+      <ul>
+        <li>
+          All the documentation in this page is taken from
+          <a
+            href="https://www.geeksforgeeks.org/python-programming-language/?ref=lbp"
+            target="_blank"
+            >GeeksforGeeks</a
+          >
+        </li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+</body>
+</html>
